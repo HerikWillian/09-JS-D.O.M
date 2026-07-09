@@ -54,7 +54,7 @@ Implementei **dois** elementos originais que não estavam descritos na atividade
 Não há dependências além de um navegador moderno.
 
 - **Localmente:** basta abrir o arquivo `index.html` diretamente no navegador, ou servir a pasta com qualquer servidor estático (ex.: extensão "Live Server" do VS Code).
-- **Publicado:** [https://github.com/HerikWillian/09-JS-D.O.M] **Vercel:** []
+- **Publicado:** [https://github.com/HerikWillian/09-JS-D.O.M] **Vercel:** [https://09-js-d-o-m-fawn.vercel.app/]
 
 ## Minhas Decisões
 
