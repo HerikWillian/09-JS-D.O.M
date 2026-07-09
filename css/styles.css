@@ -1,0 +1,264 @@
+/* ===========================================================
+   Sneaker Smash - estilos
+   Paleta inspirada em colorways vintage: fundo grafite,
+   detalhes em laranja/vermelho retrô e dourado pros itens raros.
+   =========================================================== */
+
+:root {
+  --fundo: #1b1b22;
+  --fundo-cartao: #24242e;
+  --texto: #f2ede4;
+  --texto-fraco: #a9a4b0;
+  --laranja: #ff6b35;
+  --vermelho: #e63946;
+  --dourado: #ffd166;
+  --verde: #52c785;
+  --raio: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #2a2a36, #131318 70%);
+  color: var(--texto);
+  font-family: "Montserrat", system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 24px 12px 48px;
+}
+
+#app {
+  width: 100%;
+  max-width: 720px;
+}
+
+.topo {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.topo h1 {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 900;
+  margin: 0;
+  color: var(--laranja);
+  text-shadow: 0 0 18px rgba(255, 107, 53, 0.35);
+}
+
+.emoji-topo {
+  display: inline-block;
+}
+
+.subtitulo {
+  color: var(--texto-fraco);
+  margin-top: 6px;
+  font-size: 0.95rem;
+}
+
+.tela.oculta {
+  display: none;
+}
+
+.cartao {
+  background: var(--fundo-cartao);
+  border-radius: var(--raio);
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: var(--texto-fraco);
+}
+
+#input-nome {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 2px solid #3a3a48;
+  background: #16161c;
+  color: var(--texto);
+  font-size: 1rem;
+  font-family: inherit;
+  margin-bottom: 14px;
+}
+
+#input-nome:focus {
+  outline: none;
+  border-color: var(--laranja);
+}
+
+.botao-principal {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--laranja), var(--vermelho));
+  color: #fff;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.botao-principal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 107, 53, 0.35);
+}
+
+.botao-principal:active {
+  transform: translateY(0);
+}
+
+.regras-rapidas {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--texto-fraco);
+}
+
+.regras-rapidas ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+}
+
+.regras-rapidas li {
+  padding: 4px 0;
+}
+
+.pos {
+  color: var(--verde);
+  font-weight: 700;
+}
+
+.neg {
+  color: var(--vermelho);
+  font-weight: 700;
+}
+
+/* Ranking */
+#tabela-ranking {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+#tabela-ranking th,
+#tabela-ranking td {
+  padding: 8px 6px;
+  text-align: left;
+  border-bottom: 1px solid #3a3a48;
+}
+
+#tabela-ranking th {
+  color: var(--texto-fraco);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* HUD */
+.hud {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  background: var(--fundo-cartao);
+  border-radius: var(--raio);
+  padding: 12px 8px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--texto-fraco);
+}
+
+.hud-item span {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--texto);
+  margin-top: 2px;
+}
+
+#hud-combo {
+  color: var(--dourado);
+}
+
+/* Grid do jogo */
+#grid-jogo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.buraco {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 40%, #2e2e3a, #101014 75%);
+  box-shadow: inset 0 6px 14px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.tenis {
+  position: absolute;
+  left: 50%;
+  bottom: -100%;
+  transform: translate(-50%, 0);
+  font-size: clamp(1.8rem, 8vw, 2.6rem);
+  transition: bottom 0.15s ease-out;
+  user-select: none;
+}
+
+.buraco[data-ativo="true"] .tenis {
+  bottom: 8%;
+}
+
+.tenis.raro {
+  filter: drop-shadow(0 0 10px var(--dourado));
+}
+
+.tenis.falso {
+  filter: grayscale(0.4) drop-shadow(0 0 8px var(--vermelho));
+}
+
+/* Tela de fim */
+#tela-fim .cartao {
+  text-align: center;
+}
+
+#resultado-pontos {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--dourado);
+}
+
+/* Responsivo - celular */
+@media (max-width: 480px) {
+  .cartao {
+    padding: 14px;
+  }
+
+  .hud {
+    font-size: 0.65rem;
+    gap: 4px;
+  }
+
+  .hud-item span {
+    font-size: 1.05rem;
+  }
+
+  #grid-jogo {
+    gap: 8px;
+  }
+}

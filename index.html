@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sneaker Smash 👟 - Acerte o Tênis Raro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div id="app">
+
+    <header class="topo">
+      <h1>Sneaker Smash <span class="emoji-topo">👟</span></h1>
+      <p class="subtitulo">Acerte os tênis raros antes que sumam. Cuidado com as falsificações!</p>
+    </header>
+
+    <!-- TELA INICIAL -->
+    <section id="tela-inicio" class="tela">
+      <div class="cartao">
+        <label for="input-nome">Seu nome:</label>
+        <input type="text" id="input-nome" maxlength="15" placeholder="Digite seu nome" autocomplete="off">
+        <button id="btn-jogar" class="botao-principal">Jogar</button>
+
+        <div class="regras-rapidas">
+          <p><strong>Como jogar:</strong> clique nos tênis assim que aparecerem.</p>
+          <ul>
+            <li>👟 Tênis normal: <span class="pos">+10</span></li>
+            <li>✨ Tênis raro (dourado): <span class="pos">+30</span></li>
+            <li>🚫 Falsificado: <span class="neg">-15</span> (evite!)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="ranking-container" class="cartao">
+        <h2>🏆 Ranking da Festa</h2>
+        <table id="tabela-ranking" aria-label="Tabela de ranking"></table>
+      </div>
+    </section>
+
+    <!-- TELA DE JOGO -->
+    <section id="tela-jogo" class="tela oculta">
+      <div class="hud">
+        <div class="hud-item">Jogador<br><span id="hud-nome">-</span></div>
+        <div class="hud-item">Pontos<br><span id="hud-pontos">0</span></div>
+        <div class="hud-item">Combo<br><span id="hud-combo">x1</span></div>
+        <div class="hud-item">Tempo<br><span id="hud-tempo">30</span>s</div>
+      </div>
+      <div id="grid-jogo"></div>
+    </section>
+
+    <!-- TELA DE FIM -->
+    <section id="tela-fim" class="tela oculta">
+      <div class="cartao">
+        <h2>Fim de jogo!</h2>
+        <p id="resultado-nome"></p>
+        <p id="resultado-pontos"></p>
+        <button id="btn-jogar-novamente" class="botao-principal">Jogar novamente</button>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
